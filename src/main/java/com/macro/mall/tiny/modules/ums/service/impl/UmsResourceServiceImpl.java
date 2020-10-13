@@ -22,6 +22,7 @@ import java.util.Date;
 public class UmsResourceServiceImpl extends ServiceImpl<UmsResourceMapper,UmsResource>implements UmsResourceService {
     @Autowired
     private UmsAdminCacheService adminCacheService;
+
     @Override
     public boolean create(UmsResource umsResource) {
         umsResource.setCreateTime(new Date());

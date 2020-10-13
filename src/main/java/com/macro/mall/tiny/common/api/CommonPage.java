@@ -2,6 +2,7 @@ package com.macro.mall.tiny.common.api;
 
 import cn.hutool.core.convert.Convert;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import lombok.Data;
 
 import java.util.List;
 
