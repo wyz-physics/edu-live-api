@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.macro.mall.tiny.modules.lms.mapper.LmsLiveMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.macro.mall.tiny.modules.lms.entity.LmsLive">
+        <id column="id" property="id" />
+        <result column="lecturer_id" property="lecturerId" />
+        <result column="head_teacher_id" property="headTeacherId" />
+        <result column="class_type" property="classType" />
+        <result column="start_time" property="startTime" />
+        <result column="end_time" property="endTime" />
+        <result column="student_num" property="studentNum" />
+        <result column="price" property="price" />
+    </resultMap>
+
+</mapper>

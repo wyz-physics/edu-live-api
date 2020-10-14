@@ -7,12 +7,15 @@ import com.baomidou.mybatisplus.core.toolkit.StringPool;
 import com.baomidou.mybatisplus.generator.AutoGenerator;
 import com.baomidou.mybatisplus.generator.InjectionConfig;
 import com.baomidou.mybatisplus.generator.config.*;
+import com.baomidou.mybatisplus.generator.config.builder.ConfigBuilder;
 import com.baomidou.mybatisplus.generator.config.po.LikeTable;
 import com.baomidou.mybatisplus.generator.config.po.TableInfo;
 import com.baomidou.mybatisplus.generator.config.rules.DateType;
+import com.baomidou.mybatisplus.generator.config.rules.FileType;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import com.baomidou.mybatisplus.generator.engine.VelocityTemplateEngine;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -60,7 +63,7 @@ public class MyBatisPlusGenerator {
     private static GlobalConfig initGlobalConfig(String projectPath) {
         GlobalConfig globalConfig = new GlobalConfig();
         globalConfig.setOutputDir(projectPath + "/src/main/java");
-        globalConfig.setAuthor("macro");
+        globalConfig.setAuthor("piao");
         globalConfig.setOpen(false);
         globalConfig.setSwagger2(true);
         globalConfig.setBaseResultMap(true);
@@ -96,7 +99,7 @@ public class MyBatisPlusGenerator {
         PackageConfig packageConfig = new PackageConfig();
         packageConfig.setModuleName(moduleName);
         packageConfig.setParent(props.getStr("package.base"));
-        packageConfig.setEntity("model");
+        packageConfig.setEntity("entity");
         return packageConfig;
     }
 
@@ -139,9 +142,26 @@ public class MyBatisPlusGenerator {
         InjectionConfig injectionConfig = new InjectionConfig() {
             @Override
             public void initMap() {
-                // 可用于自定义属性
+                // to do nothing
             }
         };
+        injectionConfig.setFileCreate(new IFileCreate() {
+
+            @Override
+            public boolean isCreate(ConfigBuilder configBuilder, FileType fileType, String filePath) {
+                // 判断自定义文件夹是否需要创建,这里调用默认的方法
+                checkDir(filePath);
+                //对于已存在的文件，只需重复生成 entity 和 mapper.xml
+                File file = new File(filePath);
+                boolean exist = file.exists();
+                if (exist) {
+                    return filePath.endsWith("Mapper.xml") || FileType.ENTITY == fileType;
+                }
+                //不存在的文件都需要创建
+                return true;
+            }
+        });
+
         // 模板引擎是Velocity
         String templatePath = "/templates/mapper.xml.vm";
         // 自定义输出配置
@@ -158,5 +178,6 @@ public class MyBatisPlusGenerator {
         injectionConfig.setFileOutConfigList(focList);
         return injectionConfig;
     }
+
 
 }
