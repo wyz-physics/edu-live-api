@@ -4,7 +4,7 @@ package com.macro.mall.tiny.modules.ums.service;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.macro.mall.tiny.modules.ums.dto.UmsMenuNode;
-import com.macro.mall.tiny.modules.ums.model.UmsMenu;
+import com.macro.mall.tiny.modules.ums.entity.UmsMenu;
 
 import java.util.List;
 

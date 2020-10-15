@@ -1,7 +1,7 @@
 package com.macro.mall.tiny.modules.ums.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.macro.mall.tiny.modules.ums.model.UmsAdminRoleRelation;
+import com.macro.mall.tiny.modules.ums.entity.UmsAdminRoleRelation;
 
 /**
  * 管理员角色关系管理Service

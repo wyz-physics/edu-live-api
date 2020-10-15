@@ -1,4 +1,4 @@
-package com.macro.mall.tiny.modules.ums.model;
+package com.macro.mall.tiny.modules.ums.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
@@ -15,8 +15,8 @@ import lombok.EqualsAndHashCode;
  * 后台资源表
  * </p>
  *
- * @author macro
- * @since 2020-08-21
+ * @author piao
+ * @since 2020-10-15
  */
 @Data
 @EqualsAndHashCode(callSuper = false)

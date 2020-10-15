@@ -3,7 +3,7 @@
 <mapper namespace="com.macro.mall.tiny.modules.ums.mapper.UmsAdminLoginLogMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.macro.mall.tiny.modules.ums.model.UmsAdminLoginLog">
+    <resultMap id="BaseResultMap" type="com.macro.mall.tiny.modules.ums.entity.UmsAdminLoginLog">
         <id column="id" property="id" />
         <result column="admin_id" property="adminId" />
         <result column="create_time" property="createTime" />

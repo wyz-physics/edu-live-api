@@ -3,7 +3,7 @@ package com.macro.mall.tiny.modules.ums.controller;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.macro.mall.tiny.common.api.CommonPage;
 import com.macro.mall.tiny.common.api.CommonResult;
-import com.macro.mall.tiny.modules.ums.model.UmsResource;
+import com.macro.mall.tiny.modules.ums.entity.UmsResource;
 import com.macro.mall.tiny.modules.ums.service.UmsResourceService;
 import com.macro.mall.tiny.security.component.DynamicSecurityMetadataSource;
 import io.swagger.annotations.Api;

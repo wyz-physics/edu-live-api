@@ -1,4 +1,4 @@
-package com.macro.mall.tiny.modules.ums.model;
+package com.macro.mall.tiny.modules.ums.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
@@ -11,28 +11,28 @@ import lombok.EqualsAndHashCode;
 
 /**
  * <p>
- * 后台角色资源关系表
+ * 
  * </p>
  *
- * @author macro
- * @since 2020-08-21
+ * @author piao
+ * @since 2020-10-15
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-@TableName("ums_role_resource_relation")
-@ApiModel(value="UmsRoleResourceRelation对象", description="后台角色资源关系表")
-public class UmsRoleResourceRelation implements Serializable {
+@TableName("ums_teacher")
+@ApiModel(value="UmsTeacher对象", description="")
+public class UmsTeacher implements Serializable {
 
     private static final long serialVersionUID=1L;
 
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
-    @ApiModelProperty(value = "角色ID")
-    private Long roleId;
+    @ApiModelProperty(value = "用户表id")
+    private Long userId;
 
-    @ApiModelProperty(value = "资源ID")
-    private Long resourceId;
+    @ApiModelProperty(value = "老师名字")
+    private String name;
 
 
 }

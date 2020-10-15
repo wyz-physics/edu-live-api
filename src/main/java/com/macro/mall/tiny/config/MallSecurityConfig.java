@@ -1,6 +1,6 @@
 package com.macro.mall.tiny.config;
 
-import com.macro.mall.tiny.modules.ums.model.UmsResource;
+import com.macro.mall.tiny.modules.ums.entity.UmsResource;
 import com.macro.mall.tiny.modules.ums.service.UmsAdminService;
 import com.macro.mall.tiny.modules.ums.service.UmsResourceService;
 import com.macro.mall.tiny.security.component.DynamicSecurityService;

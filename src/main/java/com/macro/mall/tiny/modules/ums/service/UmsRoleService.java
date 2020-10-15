@@ -2,9 +2,9 @@ package com.macro.mall.tiny.modules.ums.service;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.macro.mall.tiny.modules.ums.model.UmsMenu;
-import com.macro.mall.tiny.modules.ums.model.UmsResource;
-import com.macro.mall.tiny.modules.ums.model.UmsRole;
+import com.macro.mall.tiny.modules.ums.entity.UmsMenu;
+import com.macro.mall.tiny.modules.ums.entity.UmsResource;
+import com.macro.mall.tiny.modules.ums.entity.UmsRole;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;

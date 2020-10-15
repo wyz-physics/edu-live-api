@@ -1,7 +1,7 @@
 package com.macro.mall.tiny.domain;
 
-import com.macro.mall.tiny.modules.ums.model.UmsAdmin;
-import com.macro.mall.tiny.modules.ums.model.UmsResource;
+import com.macro.mall.tiny.modules.ums.entity.UmsAdmin;
+import com.macro.mall.tiny.modules.ums.entity.UmsResource;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

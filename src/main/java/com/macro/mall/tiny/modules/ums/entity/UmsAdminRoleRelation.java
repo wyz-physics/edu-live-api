@@ -1,8 +1,7 @@
-package com.macro.mall.tiny.modules.ums.model;
+package com.macro.mall.tiny.modules.ums.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
-import java.util.Date;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.io.Serializable;
 import io.swagger.annotations.ApiModel;
@@ -12,17 +11,17 @@ import lombok.EqualsAndHashCode;
 
 /**
  * <p>
- * 后台用户登录日志表
+ * 后台用户和角色关系表
  * </p>
  *
- * @author macro
- * @since 2020-08-21
+ * @author piao
+ * @since 2020-10-15
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-@TableName("ums_admin_login_log")
-@ApiModel(value="UmsAdminLoginLog对象", description="后台用户登录日志表")
-public class UmsAdminLoginLog implements Serializable {
+@TableName("ums_admin_role_relation")
+@ApiModel(value="UmsAdminRoleRelation对象", description="后台用户和角色关系表")
+public class UmsAdminRoleRelation implements Serializable {
 
     private static final long serialVersionUID=1L;
 
@@ -31,14 +30,7 @@ public class UmsAdminLoginLog implements Serializable {
 
     private Long adminId;
 
-    private Date createTime;
-
-    private String ip;
-
-    private String address;
-
-    @ApiModelProperty(value = "浏览器登录类型")
-    private String userAgent;
+    private Long roleId;
 
 
 }

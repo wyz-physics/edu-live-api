@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
  * </p>
  *
  * @author piao
- * @since 2020-10-14
+ * @since 2020-10-15
  */
 @RestController
-@RequestMapping("/lms/lmsLive")
-public class LmsLiveController {
+@RequestMapping("/lms/lmsSubject")
+public class LmsSubjectController {
 
 }
 

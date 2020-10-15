@@ -1,6 +1,6 @@
 package com.macro.mall.tiny.modules.ums.mapper;
 
-import com.macro.mall.tiny.modules.ums.model.UmsRole;
+import com.macro.mall.tiny.modules.ums.entity.UmsRole;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Param;
 

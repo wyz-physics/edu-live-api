@@ -3,7 +3,7 @@ package com.macro.mall.tiny.modules.ums.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.macro.mall.tiny.modules.ums.mapper.UmsResourceCategoryMapper;
-import com.macro.mall.tiny.modules.ums.model.UmsResourceCategory;
+import com.macro.mall.tiny.modules.ums.entity.UmsResourceCategory;
 import com.macro.mall.tiny.modules.ums.service.UmsResourceCategoryService;
 import org.springframework.stereotype.Service;
 

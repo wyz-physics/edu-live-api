@@ -5,7 +5,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.macro.mall.tiny.modules.ums.dto.UmsMenuNode;
 import com.macro.mall.tiny.modules.ums.mapper.UmsMenuMapper;
-import com.macro.mall.tiny.modules.ums.model.UmsMenu;
+import com.macro.mall.tiny.modules.ums.entity.UmsMenu;
 import com.macro.mall.tiny.modules.ums.service.UmsMenuService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;

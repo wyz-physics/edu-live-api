@@ -14,7 +14,7 @@ import com.macro.mall.tiny.modules.ums.mapper.UmsAdminLoginLogMapper;
 import com.macro.mall.tiny.modules.ums.mapper.UmsAdminMapper;
 import com.macro.mall.tiny.modules.ums.mapper.UmsResourceMapper;
 import com.macro.mall.tiny.modules.ums.mapper.UmsRoleMapper;
-import com.macro.mall.tiny.modules.ums.model.*;
+import com.macro.mall.tiny.modules.ums.entity.*;
 import com.macro.mall.tiny.modules.ums.service.UmsAdminCacheService;
 import com.macro.mall.tiny.modules.ums.service.UmsAdminRoleRelationService;
 import com.macro.mall.tiny.modules.ums.service.UmsAdminService;

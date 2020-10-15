@@ -2,7 +2,7 @@ package com.macro.mall.tiny.modules.ums.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.macro.mall.tiny.modules.ums.mapper.UmsRoleMenuRelationMapper;
-import com.macro.mall.tiny.modules.ums.model.UmsRoleMenuRelation;
+import com.macro.mall.tiny.modules.ums.entity.UmsRoleMenuRelation;
 import com.macro.mall.tiny.modules.ums.service.UmsRoleMenuRelationService;
 import org.springframework.stereotype.Service;
 

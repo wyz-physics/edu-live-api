@@ -2,8 +2,8 @@ package com.macro.mall.tiny.modules.ums.service;
 
 
 
-import com.macro.mall.tiny.modules.ums.model.UmsAdmin;
-import com.macro.mall.tiny.modules.ums.model.UmsResource;
+import com.macro.mall.tiny.modules.ums.entity.UmsAdmin;
+import com.macro.mall.tiny.modules.ums.entity.UmsResource;
 
 import java.util.List;
 

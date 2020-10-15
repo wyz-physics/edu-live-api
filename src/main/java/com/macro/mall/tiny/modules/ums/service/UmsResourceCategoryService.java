@@ -2,7 +2,7 @@ package com.macro.mall.tiny.modules.ums.service;
 
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.macro.mall.tiny.modules.ums.model.UmsResourceCategory;
+import com.macro.mall.tiny.modules.ums.entity.UmsResourceCategory;
 
 import java.util.List;
 

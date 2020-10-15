@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.macro.mall.tiny.common.api.CommonPage;
 import com.macro.mall.tiny.common.api.CommonResult;
 import com.macro.mall.tiny.modules.ums.dto.UmsMenuNode;
-import com.macro.mall.tiny.modules.ums.model.UmsMenu;
+import com.macro.mall.tiny.modules.ums.entity.UmsMenu;
 import com.macro.mall.tiny.modules.ums.service.UmsMenuService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

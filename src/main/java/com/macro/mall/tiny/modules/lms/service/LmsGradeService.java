@@ -1,6 +1,6 @@
 package com.macro.mall.tiny.modules.lms.service;
 
-import com.macro.mall.tiny.modules.lms.entity.LmsLive;
+import com.macro.mall.tiny.modules.lms.entity.LmsGrade;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -9,8 +9,8 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * </p>
  *
  * @author piao
- * @since 2020-10-14
+ * @since 2020-10-15
  */
-public interface LmsLiveService extends IService<LmsLive> {
+public interface LmsGradeService extends IService<LmsGrade> {
 
 }

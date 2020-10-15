@@ -4,9 +4,9 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.macro.mall.tiny.modules.ums.dto.UmsAdminParam;
 import com.macro.mall.tiny.modules.ums.dto.UpdateAdminPasswordParam;
-import com.macro.mall.tiny.modules.ums.model.UmsAdmin;
-import com.macro.mall.tiny.modules.ums.model.UmsResource;
-import com.macro.mall.tiny.modules.ums.model.UmsRole;
+import com.macro.mall.tiny.modules.ums.entity.UmsAdmin;
+import com.macro.mall.tiny.modules.ums.entity.UmsResource;
+import com.macro.mall.tiny.modules.ums.entity.UmsRole;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.transaction.annotation.Transactional;
 

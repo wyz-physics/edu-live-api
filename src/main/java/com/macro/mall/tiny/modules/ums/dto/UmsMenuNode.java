@@ -1,6 +1,6 @@
 package com.macro.mall.tiny.modules.ums.dto;
 
-import com.macro.mall.tiny.modules.ums.model.UmsMenu;
+import com.macro.mall.tiny.modules.ums.entity.UmsMenu;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;

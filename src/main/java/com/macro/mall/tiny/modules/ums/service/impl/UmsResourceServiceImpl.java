@@ -6,7 +6,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.macro.mall.tiny.modules.ums.mapper.UmsResourceMapper;
-import com.macro.mall.tiny.modules.ums.model.UmsResource;
+import com.macro.mall.tiny.modules.ums.entity.UmsResource;
 import com.macro.mall.tiny.modules.ums.service.UmsAdminCacheService;
 import com.macro.mall.tiny.modules.ums.service.UmsResourceService;
 import org.springframework.beans.factory.annotation.Autowired;

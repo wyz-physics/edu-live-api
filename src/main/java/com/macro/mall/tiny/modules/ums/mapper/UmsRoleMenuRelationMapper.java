@@ -1,6 +1,6 @@
 package com.macro.mall.tiny.modules.ums.mapper;
 
-import com.macro.mall.tiny.modules.ums.model.UmsRoleMenuRelation;
+import com.macro.mall.tiny.modules.ums.entity.UmsRoleMenuRelation;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**

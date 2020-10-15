@@ -1,4 +1,4 @@
-package com.macro.mall.tiny.modules.ums.model;
+package com.macro.mall.tiny.modules.lms.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
@@ -11,26 +11,25 @@ import lombok.EqualsAndHashCode;
 
 /**
  * <p>
- * 后台用户和角色关系表
+ * 
  * </p>
  *
- * @author macro
- * @since 2020-08-21
+ * @author piao
+ * @since 2020-10-15
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-@TableName("ums_admin_role_relation")
-@ApiModel(value="UmsAdminRoleRelation对象", description="后台用户和角色关系表")
-public class UmsAdminRoleRelation implements Serializable {
+@TableName("lms_subject")
+@ApiModel(value="LmsSubject对象", description="")
+public class LmsSubject implements Serializable {
 
     private static final long serialVersionUID=1L;
 
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
-    private Long adminId;
-
-    private Long roleId;
+    @ApiModelProperty(value = "分类名字")
+    private String name;
 
 
 }
