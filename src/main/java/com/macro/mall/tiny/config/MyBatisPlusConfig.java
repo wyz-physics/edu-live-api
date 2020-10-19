@@ -8,17 +8,22 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
- * MyBatis配置类
- * Created by macro on 2019/4/8.
+ * mybatis-plus配置
+ *
  */
 @Configuration
 @EnableTransactionManagement
 @MapperScan({"com.macro.mall.tiny.modules.*.mapper"})
-public class MyBatisConfig {
+public class MyBatisPlusConfig {
+
+    /**
+     * 分页插件
+     */
     @Bean
     public PaginationInterceptor paginationInterceptor() {
         PaginationInterceptor paginationInterceptor = new PaginationInterceptor();
         paginationInterceptor.setCountSqlParser(new JsqlParserCountOptimize(true));
         return paginationInterceptor;
     }
+
 }

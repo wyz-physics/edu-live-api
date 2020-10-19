@@ -8,6 +8,7 @@
         <result column="live_course_id" property="liveCourseId" />
         <result column="serialNo" property="serialNo" />
         <result column="start_time" property="startTime" />
+        <result column="courseware_url" property="coursewareUrl" />
         <result column="end_time" property="endTime" />
         <result column="create_time" property="createTime" />
         <result column="update_time" property="updateTime" />

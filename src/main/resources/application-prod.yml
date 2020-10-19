@@ -19,3 +19,18 @@ logging:
   level:
     root: warn
     com.macro.mall: debug
+
+# 文件存储路径
+file:
+  mac:
+    path: ~/file/
+    avatar: ~/avatar/
+  linux:
+    path: /file/
+    avatar: /avatar/
+  windows:
+    path: D:/hapc/file/
+    avatar: D:/hapc/avatar/
+  # 文件大小 /M
+  maxSize: 500
+  avatarMaxSize: 5

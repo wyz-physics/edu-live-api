@@ -15,7 +15,7 @@ import lombok.EqualsAndHashCode;
  * </p>
  *
  * @author piao
- * @since 2020-10-15
+ * @since 2020-10-19
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -30,6 +30,5 @@ public class LmsGrade implements Serializable {
 
     @ApiModelProperty(value = "年级")
     private String name;
-
 
 }

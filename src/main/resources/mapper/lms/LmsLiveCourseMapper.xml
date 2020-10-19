@@ -13,7 +13,7 @@
         <result column="subject_id" property="subjectId" />
         <result column="start_time" property="startTime" />
         <result column="end_time" property="endTime" />
-        <result column="cover_img" property="coverImg" />
+        <result column="cover_img_url" property="coverImgUrl" />
         <result column="detailed_introduction" property="detailedIntroduction" />
         <result column="class_size" property="classSize" />
         <result column="market_price" property="marketPrice" />
