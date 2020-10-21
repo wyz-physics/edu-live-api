@@ -19,5 +19,5 @@ import org.apache.ibatis.annotations.Param;
  */
 public interface LmsLiveCourseMapper extends BaseMapper<LmsLiveCourse> {
 
-    Page queryCourseList(Page page, @Param(Constants.WRAPPER)QueryWrapper Wrapper);
+    Page queryLiveCourseList(Page page, @Param(Constants.WRAPPER)QueryWrapper<LmsLiveCourse> Wrapper);
 }

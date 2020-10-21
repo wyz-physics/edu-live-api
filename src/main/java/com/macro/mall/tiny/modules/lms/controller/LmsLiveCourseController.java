@@ -28,8 +28,8 @@ public class LmsLiveCourseController {
                                   @RequestParam(required = false) Long subjectId,
                                   @RequestParam(required = false) Long lecturerId,
                                   @RequestParam(required = false) Long headTeacherId,
-                                  @RequestParam(defaultValue = "5") Integer pageSize,
-                                  @RequestParam(defaultValue = "1") Integer pageNum) {
+                                  @RequestParam(defaultValue = "1") Integer pageNum,
+                                  @RequestParam(defaultValue = "5") Integer pageSize) {
         return CommonResult.success(liveCourseService.queryList(gradeId, subjectId, lecturerId, headTeacherId, pageNum, pageSize));
     }
 

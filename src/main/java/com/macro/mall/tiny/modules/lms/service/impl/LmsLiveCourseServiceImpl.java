@@ -120,7 +120,7 @@ public class LmsLiveCourseServiceImpl extends ServiceImpl<LmsLiveCourseMapper, L
         if (headTeacherId != null) {
             wrapper.lambda().eq(LmsLiveCourse::getHeadTeacherId, headTeacherId);
         }
-        Page maps = liveCourseMapper.queryCourseList(page, wrapper);
+        Page maps = liveCourseMapper.queryLiveCourseList(page, wrapper);
         return maps;
     }
 
