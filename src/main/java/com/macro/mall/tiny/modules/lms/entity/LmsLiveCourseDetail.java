@@ -17,7 +17,7 @@ import lombok.EqualsAndHashCode;
  * </p>
  *
  * @author piao
- * @since 2020-10-19
+ * @since 2020-10-20
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -37,11 +37,11 @@ public class LmsLiveCourseDetail implements Serializable {
     @TableField("serialNo")
     private Integer serialNo;
 
-    @ApiModelProperty(value = "直播开始时间")
-    private Date startTime;
-
     @ApiModelProperty(value = "课件url")
     private String coursewareUrl;
+
+    @ApiModelProperty(value = "直播开始时间")
+    private Date startTime;
 
     @ApiModelProperty(value = "直播结束时间")
     private Date endTime;

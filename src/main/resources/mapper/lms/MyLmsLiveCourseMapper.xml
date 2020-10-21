@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.macro.mall.tiny.modules.lms.mapper.LmsLiveCourseMapper">
+
+    <select id="queryCourseList" resultType="map">
+        SELECT
+            lc.*,
+            g.`name` AS grade_name,
+            s.`name` AS subject_name,
+            t1.`name` AS lecturer_name,
+            t2.`name` AS head_teacher_name
+        FROM
+            lms_live_course AS lc
+                LEFT JOIN lms_grade AS g ON lc.grade_id = g.id
+                LEFT JOIN lms_subject AS s ON lc.subject_id = s.id
+                LEFT JOIN ums_teacher AS t1 ON lc.lecturer_id = t1.id
+                LEFT JOIN ums_teacher AS t2 ON lc.head_teacher_id = t2.id
+        ${ew.customSqlSegment}
+    </select>
+</mapper>

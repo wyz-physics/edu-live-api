@@ -20,17 +20,26 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-@TableName("lms_grade")
-@ApiModel(value="LmsGrade对象", description="")
-public class LmsGrade implements Serializable {
+@TableName("lms_record_course_detail")
+@ApiModel(value="LmsRecordCourseDetail对象", description="")
+public class LmsRecordCourseDetail implements Serializable {
 
     private static final long serialVersionUID=1L;
 
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
-    @ApiModelProperty(value = "年级")
+    @ApiModelProperty(value = "录播课id")
+    private Long recordCourseId;
+
+    @ApiModelProperty(value = "单元")
+    private Integer unit;
+
+    @ApiModelProperty(value = "课时名称")
     private String name;
+
+    @ApiModelProperty(value = "上传资料url")
+    private String resourceUrl;
 
     @ApiModelProperty(value = "创建时间")
     private Date createTime;

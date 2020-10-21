@@ -7,8 +7,7 @@ import com.macro.mall.tiny.modules.lms.entity.LmsLiveCourse;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Param;
 
-import java.util.List;
-import java.util.Map;
+
 
 /**
  * <p>

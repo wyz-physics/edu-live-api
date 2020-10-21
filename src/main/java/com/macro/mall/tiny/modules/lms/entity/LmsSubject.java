@@ -2,6 +2,7 @@ package com.macro.mall.tiny.modules.lms.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
+import java.util.Date;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.io.Serializable;
 import io.swagger.annotations.ApiModel;
@@ -15,7 +16,7 @@ import lombok.EqualsAndHashCode;
  * </p>
  *
  * @author piao
- * @since 2020-10-19
+ * @since 2020-10-20
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -30,6 +31,12 @@ public class LmsSubject implements Serializable {
 
     @ApiModelProperty(value = "分类名字")
     private String name;
+
+    @ApiModelProperty(value = "创建时间")
+    private Date createTime;
+
+    @ApiModelProperty(value = "更新时间")
+    private Date updateTime;
 
 
 }
