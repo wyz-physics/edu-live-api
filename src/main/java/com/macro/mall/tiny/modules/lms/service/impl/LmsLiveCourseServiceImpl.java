@@ -19,6 +19,7 @@ import javax.annotation.Resource;
 import java.sql.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * <p>
@@ -105,7 +106,7 @@ public class LmsLiveCourseServiceImpl extends ServiceImpl<LmsLiveCourseMapper, L
      * @param pageSize
      * @return
      */
-    public Page queryList(Long gradeId, Long subjectId, Long lecturerId, Long headTeacherId, Integer pageNum, Integer pageSize) {
+    public Page<Map<String,Object>> queryList(Long gradeId, Long subjectId, Long lecturerId, Long headTeacherId, Integer pageNum, Integer pageSize) {
         Page page = new Page(pageNum, pageSize);
         QueryWrapper<LmsLiveCourse> wrapper = new QueryWrapper<>();
         if (gradeId != null) {
@@ -120,7 +121,7 @@ public class LmsLiveCourseServiceImpl extends ServiceImpl<LmsLiveCourseMapper, L
         if (headTeacherId != null) {
             wrapper.lambda().eq(LmsLiveCourse::getHeadTeacherId, headTeacherId);
         }
-        Page maps = liveCourseMapper.queryLiveCourseList(page, wrapper);
+        Page<Map<String,Object>> maps = liveCourseMapper.queryLiveCourseList(page, wrapper);
         return maps;
     }
 

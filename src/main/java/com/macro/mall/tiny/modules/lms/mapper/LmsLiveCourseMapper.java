@@ -7,6 +7,7 @@ import com.macro.mall.tiny.modules.lms.entity.LmsLiveCourse;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.Map;
 
 
 /**
@@ -19,5 +20,5 @@ import org.apache.ibatis.annotations.Param;
  */
 public interface LmsLiveCourseMapper extends BaseMapper<LmsLiveCourse> {
 
-    Page queryLiveCourseList(Page page, @Param(Constants.WRAPPER)QueryWrapper<LmsLiveCourse> Wrapper);
+    Page<Map<String,Object>> queryLiveCourseList(Page<Map<String,Object>> page, @Param(Constants.WRAPPER)QueryWrapper<LmsLiveCourse> Wrapper);
 }

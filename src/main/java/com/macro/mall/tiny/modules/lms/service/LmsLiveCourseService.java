@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * <p>
@@ -17,7 +18,7 @@ import java.util.List;
  */
 public interface LmsLiveCourseService extends IService<LmsLiveCourse> {
 
-    Page queryList(Long gradeId, Long subjectId, Long lecturerId, Long headTeacherId, Integer pageNum, Integer pageSize);
+    Page<Map<String,Object>> queryList(Long gradeId, Long subjectId, Long lecturerId, Long headTeacherId, Integer pageNum, Integer pageSize);
     Boolean deleteMulti(List<Long> ids);
     Boolean delete(Long id);
     Boolean update(LmsLiveCourse lmsLiveCourse);

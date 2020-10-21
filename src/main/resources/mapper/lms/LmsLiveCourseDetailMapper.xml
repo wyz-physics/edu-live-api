@@ -6,6 +6,7 @@
     <resultMap id="BaseResultMap" type="com.macro.mall.tiny.modules.lms.entity.LmsLiveCourseDetail">
         <id column="id" property="id" />
         <result column="live_course_id" property="liveCourseId" />
+        <result column="unit" property="unit" />
         <result column="serialNo" property="serialNo" />
         <result column="courseware_url" property="coursewareUrl" />
         <result column="start_time" property="startTime" />

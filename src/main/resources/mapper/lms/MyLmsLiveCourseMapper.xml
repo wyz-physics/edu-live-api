@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.macro.mall.tiny.modules.lms.mapper.LmsLiveCourseMapper">
 
-    <select id="queryLiveCourseList" resultType="map">
+    <select id="queryLiveCourseList" resultType="java.util.Map">
         SELECT
             lc.*,
             g.`name` AS grade_name,
