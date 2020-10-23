@@ -23,7 +23,7 @@ public class LmsLiveCourseController {
     private LmsLiveCourseService liveCourseService;
 
     @ApiOperation(value = "条件分页查询课程列表")
-    @GetMapping(value = "/queryList")
+    @GetMapping(value = "/list")
     public CommonResult queryList(@RequestParam(required = false) Long gradeId,
                                   @RequestParam(required = false) Long subjectId,
                                   @RequestParam(required = false) Long lecturerId,
@@ -31,6 +31,12 @@ public class LmsLiveCourseController {
                                   @RequestParam(defaultValue = "1") Integer pageNum,
                                   @RequestParam(defaultValue = "5") Integer pageSize) {
         return CommonResult.success(liveCourseService.queryList(gradeId, subjectId, lecturerId, headTeacherId, pageNum, pageSize));
+    }
+
+    @ApiOperation(value = "获取直播课列表用于商品上架")
+    @GetMapping(value = "/queryList")
+    public CommonResult queryList() {
+        return CommonResult.success(liveCourseService.queryCourseList());
     }
 
     @ApiOperation(value = "新增直播课")

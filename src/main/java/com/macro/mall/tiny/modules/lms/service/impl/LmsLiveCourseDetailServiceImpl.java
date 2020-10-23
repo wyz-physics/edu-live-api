@@ -69,6 +69,7 @@ public class LmsLiveCourseDetailServiceImpl extends ServiceImpl<LmsLiveCourseDet
     public List<LmsLiveCourseDetail> queryByLiveCourseId(Long liveCourseId){
         QueryWrapper<LmsLiveCourseDetail> wrapper = new QueryWrapper<>();
         wrapper.lambda().eq(LmsLiveCourseDetail::getLiveCourseId,liveCourseId);
+        wrapper.lambda().orderByAsc(LmsLiveCourseDetail::getUnit,LmsLiveCourseDetail::getSerialNo);
         return list(wrapper);
     }
 }

@@ -17,4 +17,21 @@
                 LEFT JOIN ums_teacher AS t2 ON lc.head_teacher_id = t2.id
         ${ew.customSqlSegment}
     </select>
+
+    <select id="queryCourseList" resultType="java.util.Map">
+        SELECT
+            lc.*,
+            g.`name` AS grade_name,
+            s.`name` AS subject_name,
+            t1.`name` AS lecturer_name,
+            t2.`name` AS head_teacher_name
+        FROM
+            lms_live_course AS lc
+                LEFT JOIN cms_commodity AS cc ON lc.id = cc.course_id
+                LEFT JOIN lms_grade AS g ON lc.grade_id = g.id
+                LEFT JOIN lms_subject AS s ON lc.subject_id = s.id
+                LEFT JOIN ums_teacher AS t1 ON lc.lecturer_id = t1.id
+                LEFT JOIN ums_teacher AS t2 ON lc.head_teacher_id = t2.id
+        WHERE cc.course_id IS NULL
+    </select>
 </mapper>

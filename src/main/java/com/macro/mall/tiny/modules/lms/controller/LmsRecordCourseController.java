@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.Map;
 
 /**
  * <p>
@@ -25,6 +26,24 @@ public class LmsRecordCourseController {
 
     @Resource
     private LmsRecordCourseService recordCourseService;
+
+    @ApiOperation("查询录播课列表")
+    @GetMapping("/list")
+    public CommonResult queryList(@RequestParam(required = false) Long gradeId,
+                                  @RequestParam(required = false)Long subjectId,
+                                  @RequestParam(required = false)Long lecturerId,
+                                  @RequestParam(defaultValue = "1")Integer pageNum,
+                                  @RequestParam(defaultValue = "5")Integer pageSize){
+        Page page = recordCourseService.queryList(gradeId, subjectId, lecturerId, pageNum, pageSize);
+        return CommonResult.success(page);
+    }
+
+    @ApiOperation("获取录播课列表用于商品上架")
+    @GetMapping("/recordCourseList")
+    public CommonResult  queryCourseList(){
+        return CommonResult.success(recordCourseService.queryCourseList());
+    }
+
 
     @ApiOperation("新增录播课")
     @PostMapping("/create")
@@ -61,20 +80,6 @@ public class LmsRecordCourseController {
             return CommonResult.success(null,"删除成功");
         }else return CommonResult.failed("删除失败");
     }
-
-    @ApiOperation("查询录播课列表")
-    @GetMapping("/list")
-    public CommonResult queryList(@RequestParam(required = false) Long gradeId,
-                                  @RequestParam(required = false)Long subjectId,
-                                  @RequestParam(required = false)Long lecturerId,
-                                  @RequestParam(defaultValue = "1")Integer pageNum,
-                                  @RequestParam(defaultValue = "5")Integer pageSize){
-        Page page = recordCourseService.queryList(gradeId, subjectId, lecturerId, pageNum, pageSize);
-        return CommonResult.success(page);
-    }
-
-
-
 
 
 }

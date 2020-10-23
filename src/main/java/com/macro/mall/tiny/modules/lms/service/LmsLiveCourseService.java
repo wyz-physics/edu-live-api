@@ -23,4 +23,5 @@ public interface LmsLiveCourseService extends IService<LmsLiveCourse> {
     Boolean delete(Long id);
     Boolean update(LmsLiveCourse lmsLiveCourse);
     Boolean create(LmsLiveCourse lmsLiveCourse);
+    List<Map<String,Object>> queryCourseList();
 }

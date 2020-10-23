@@ -10,6 +10,7 @@ spring:
       password: Xiaoming58
 
       # 初始连接数
+      # 初始连接数
       initial-size: 5
       # 最小连接数
       min-idle: 10

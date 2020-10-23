@@ -125,4 +125,10 @@ public class LmsLiveCourseServiceImpl extends ServiceImpl<LmsLiveCourseMapper, L
         return maps;
     }
 
+    public List<Map<String,Object>> queryCourseList(){
+        return liveCourseMapper.queryCourseList();
+    }
+
+
+
 }

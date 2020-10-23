@@ -7,7 +7,7 @@
             lrc.*,
             g.`name` AS grade_name,
             s.`name` AS subject_name,
-            t.`name` AS lecturer_name,
+            t.`name` AS lecturer_name
         FROM
             lms_record_course AS lrc
                 LEFT JOIN lms_grade AS g ON lc.grade_id = g.id
@@ -15,4 +15,21 @@
                 LEFT JOIN ums_teacher AS t ON lc.lecturer_id = t.id
         ${ew.customSqlSegment}
     </select>
+
+    <select id="queryCourseList" resultType="java.util.Map">
+        SELECT
+            lrc.*,
+            g.`name` AS grade_name,
+            s.`name` AS subject_name,
+            t.`name` AS lecturer_name
+        FROM
+            lms_record_course AS lrc
+                LEFT JOIN cms_commodity AS cc ON lrc.id = cc.course_id
+                LEFT JOIN lms_grade AS g ON lc.grade_id = g.id
+                LEFT JOIN lms_subject AS s ON lc.subject_id = s.id
+                LEFT JOIN ums_teacher AS t ON lc.lecturer_id = t.id
+        WHERE cc.course_id IS NULL
+    </select>
+
+
 </mapper>

@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 
 /**
@@ -99,7 +100,7 @@ public class LmsRecordCourseServiceImpl extends ServiceImpl<LmsRecordCourseMappe
      * @return
      */
     public Page queryList(Long gradeId,Long subjectId,Long lecturerId,Integer pageNum,Integer pageSize){
-        Page page = new Page(pageNum,pageSize);
+        Page<Map<String,Object>> page = new Page<>(pageNum,pageSize);
         QueryWrapper<LmsRecordCourse> wrapper = new QueryWrapper<>();
         if (gradeId != null) {
             wrapper.lambda().eq(LmsRecordCourse ::getGradeId,gradeId);
@@ -111,8 +112,13 @@ public class LmsRecordCourseServiceImpl extends ServiceImpl<LmsRecordCourseMappe
             wrapper.lambda().eq(LmsRecordCourse::getSubjectId,subjectId);
         }
         return recordCourseMapper.queryRecordCourseList(page,wrapper);
-
     }
 
-
+    /**
+     * 用于商品上架
+     * @return
+     */
+    public List<Map<String,Object>> queryCourseList(){
+        return recordCourseMapper.queryCourseList();
+    }
 }

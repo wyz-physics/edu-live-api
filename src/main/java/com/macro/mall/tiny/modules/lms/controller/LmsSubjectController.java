@@ -24,6 +24,14 @@ public class LmsSubjectController {
     @Resource
     private LmsSubjectService subjectService;
 
+    @ApiOperation("获取科目列表")
+    @PostMapping("/list")
+    public CommonResult<List<LmsSubject>> queryList(){
+        List<LmsSubject> lmsSubjects = subjectService.queryList();
+        return CommonResult.success(lmsSubjects,"新增成功");
+
+    }
+
     @ApiOperation("新建科目")
     @PostMapping("/create")
     public CommonResult<LmsSubject> create(@RequestBody LmsSubject subject){
@@ -51,12 +59,5 @@ public class LmsSubjectController {
         }else return CommonResult.failed("删除失败");
     }
 
-    @ApiOperation("获取科目列表")
-    @PostMapping("/list")
-    public CommonResult<List<LmsSubject>> queryList(){
-        List<LmsSubject> lmsSubjects = subjectService.queryList();
-        return CommonResult.success(lmsSubjects,"新增成功");
-
-    }
 }
 
