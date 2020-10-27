@@ -1,5 +1,6 @@
 package com.macro.mall.tiny.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.macro.mall.tiny.modules.ums.entity.UmsAdmin;
 import com.macro.mall.tiny.modules.ums.entity.UmsResource;
 import org.springframework.security.core.GrantedAuthority;
@@ -17,6 +18,8 @@ import java.util.stream.Collectors;
 public class AdminUserDetails implements UserDetails {
     private final UmsAdmin umsAdmin;
     private final List<UmsResource> resourceList;
+
+
     public AdminUserDetails(UmsAdmin umsAdmin, List<UmsResource> resourceList) {
         this.umsAdmin = umsAdmin;
         this.resourceList = resourceList;
@@ -31,31 +34,37 @@ public class AdminUserDetails implements UserDetails {
     }
 
     @Override
+    @JsonIgnore
     public String getPassword() {
         return umsAdmin.getPassword();
     }
 
     @Override
+    @JsonIgnore
     public String getUsername() {
         return umsAdmin.getUsername();
     }
 
     @Override
+    @JsonIgnore
     public boolean isAccountNonExpired() {
         return true;
     }
 
     @Override
+    @JsonIgnore
     public boolean isAccountNonLocked() {
         return true;
     }
 
     @Override
+    @JsonIgnore
     public boolean isCredentialsNonExpired() {
         return true;
     }
 
     @Override
+    @JsonIgnore
     public boolean isEnabled() {
         return umsAdmin.getStatus().equals(1);
     }

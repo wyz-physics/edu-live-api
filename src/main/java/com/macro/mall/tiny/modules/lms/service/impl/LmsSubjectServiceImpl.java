@@ -24,40 +24,25 @@ public class LmsSubjectServiceImpl extends ServiceImpl<LmsSubjectMapper, LmsSubj
     @Resource
     private LmsSubjectService subjectService;
 
-    /**
-     *新建科目
-     * @param subject
-     * @return
-     */
+    @Override
     public Boolean create(LmsSubject subject){
         subject.setCreateTime(new Date(System.currentTimeMillis()));
         subject.setUpdateTime(new Date(System.currentTimeMillis()));
         return subjectService.save(subject);
     }
 
-    /**
-     * 编辑科目
-     * @param subject
-     * @return
-     */
+    @Override
     public Boolean update(LmsSubject subject) {
         subject.setUpdateTime(new Date(System.currentTimeMillis()));
         return subjectService.updateById(subject);
     }
 
-    /**
-     * 删除科目
-     * @param id
-     * @return
-     */
+    @Override
     public Boolean delete(Long id){
         return subjectService.removeById(id);
     }
 
-    /**
-     * 查询科目列表
-     * @return
-     */
+    @Override
     public List<LmsSubject> queryList(){
         return subjectService.list();
     }

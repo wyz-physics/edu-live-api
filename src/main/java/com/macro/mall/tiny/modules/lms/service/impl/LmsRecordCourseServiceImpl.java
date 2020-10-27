@@ -36,22 +36,14 @@ public class LmsRecordCourseServiceImpl extends ServiceImpl<LmsRecordCourseMappe
     @Resource
     private LmsRecordCourseDetailService recordCourseDetailService;
 
-    /**
-     * 新增录播课
-     * @param recordCourse
-     * @return
-     */
+    @Override
     public Boolean create(LmsRecordCourse recordCourse){
         recordCourse.setCreateTime(new Date(System.currentTimeMillis()));
         recordCourse.setUpdateTime(new Date(System.currentTimeMillis()));
         return recordCourseService.save(recordCourse);
     }
 
-    /**
-     * 编辑录播课
-     * @param recordCourse
-     * @return
-     */
+    @Override
     public Boolean update(LmsRecordCourse recordCourse){
         if (recordCourse.getId() == null){
             throw new ApiException("请传入主键id");
@@ -60,11 +52,7 @@ public class LmsRecordCourseServiceImpl extends ServiceImpl<LmsRecordCourseMappe
         return recordCourseService.updateById(recordCourse);
     }
 
-    /**
-     * 删除录播课
-     * @param id
-     * @return
-     */
+    @Override
     public Boolean delete(Long id){
         boolean b = recordCourseService.removeById(id);
         QueryWrapper<LmsRecordCourseDetail> wrapper = new QueryWrapper<>();
@@ -73,11 +61,7 @@ public class LmsRecordCourseServiceImpl extends ServiceImpl<LmsRecordCourseMappe
         return (a && b);
     }
 
-    /**
-     * 批量删除
-     * @param ids
-     * @return
-     */
+    @Override
     public Boolean deleteMulti(List<Long> ids){
         boolean b = recordCourseService.removeByIds(ids);
         QueryWrapper<LmsRecordCourseDetail> wrapper = new QueryWrapper<>();
@@ -90,15 +74,7 @@ public class LmsRecordCourseServiceImpl extends ServiceImpl<LmsRecordCourseMappe
         return b;
     }
 
-    /**
-     * 条件分页查询录播课
-     * @param gradeId
-     * @param subjectId
-     * @param lecturerId
-     * @param pageNum
-     * @param pageSize
-     * @return
-     */
+    @Override
     public Page queryList(Long gradeId,Long subjectId,Long lecturerId,Integer pageNum,Integer pageSize){
         Page<Map<String,Object>> page = new Page<>(pageNum,pageSize);
         QueryWrapper<LmsRecordCourse> wrapper = new QueryWrapper<>();
@@ -114,10 +90,7 @@ public class LmsRecordCourseServiceImpl extends ServiceImpl<LmsRecordCourseMappe
         return recordCourseMapper.queryRecordCourseList(page,wrapper);
     }
 
-    /**
-     * 用于商品上架
-     * @return
-     */
+    @Override
     public List<Map<String,Object>> queryCourseList(){
         return recordCourseMapper.queryCourseList();
     }

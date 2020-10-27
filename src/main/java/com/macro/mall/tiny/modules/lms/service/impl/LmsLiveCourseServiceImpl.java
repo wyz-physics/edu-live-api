@@ -39,11 +39,7 @@ public class LmsLiveCourseServiceImpl extends ServiceImpl<LmsLiveCourseMapper, L
     @Resource
     private LmsLiveCourseDetailService liveCourseDetailService;
 
-    /**
-     * 创建直播课
-     * @param lmsLiveCourse
-     * @return
-     */
+    @Override
     public Boolean create(LmsLiveCourse lmsLiveCourse) {
         lmsLiveCourse.setCreateTime(new Date(System.currentTimeMillis()));
         lmsLiveCourse.setUpdateTime(new Date(System.currentTimeMillis()));
@@ -52,11 +48,7 @@ public class LmsLiveCourseServiceImpl extends ServiceImpl<LmsLiveCourseMapper, L
 
     }
 
-    /**
-     * 修改/编辑直播课
-     * @param lmsLiveCourse
-     * @return
-     */
+   @Override
     public Boolean update(LmsLiveCourse lmsLiveCourse) {
         Long id = lmsLiveCourse.getId();
         if (id == null) {
@@ -66,11 +58,7 @@ public class LmsLiveCourseServiceImpl extends ServiceImpl<LmsLiveCourseMapper, L
         return liveCourseService.updateById(lmsLiveCourse);
     }
 
-    /**
-     * 删除直播课及其详情
-     * @param id
-     * @return
-     */
+    @Override
     public Boolean delete(Long id) {
         boolean a = liveCourseService.removeById(id);
         QueryWrapper<LmsLiveCourseDetail> wrapper = new QueryWrapper<>();
@@ -79,11 +67,7 @@ public class LmsLiveCourseServiceImpl extends ServiceImpl<LmsLiveCourseMapper, L
         return (a && b);
     }
 
-    /**
-     * 批量删除直播课及其详情
-     * @param ids
-     * @return
-     */
+    @Override
     public Boolean deleteMulti(List<Long> ids) {
         boolean b = liveCourseService.removeByIds(ids);
         QueryWrapper<LmsLiveCourseDetail> wrapper = new QueryWrapper<>();
@@ -96,16 +80,7 @@ public class LmsLiveCourseServiceImpl extends ServiceImpl<LmsLiveCourseMapper, L
         return b;
     }
 
-    /**
-     * 条件分页查询课程
-     * @param gradeId
-     * @param subjectId
-     * @param lecturerId
-     * @param headTeacherId
-     * @param pageNum
-     * @param pageSize
-     * @return
-     */
+    @Override
     public Page<Map<String,Object>> queryList(Long gradeId, Long subjectId, Long lecturerId, Long headTeacherId, Integer pageNum, Integer pageSize) {
         Page page = new Page(pageNum, pageSize);
         QueryWrapper<LmsLiveCourse> wrapper = new QueryWrapper<>();
@@ -124,7 +99,7 @@ public class LmsLiveCourseServiceImpl extends ServiceImpl<LmsLiveCourseMapper, L
         Page<Map<String,Object>> maps = liveCourseMapper.queryLiveCourseList(page, wrapper);
         return maps;
     }
-
+    @Override
     public List<Map<String,Object>> queryCourseList(){
         return liveCourseMapper.queryCourseList();
     }

@@ -16,8 +16,30 @@ import java.util.List;
  */
 public interface LmsSubjectService extends IService<LmsSubject> {
 
+    /**
+     *新建科目
+     * @param subject
+     * @return
+     */
     Boolean create(LmsSubject subject);
+
+    /**
+     * 编辑科目
+     * @param subject
+     * @return
+     */
     Boolean update(LmsSubject subject);
+
+    /**
+     * 删除科目
+     * @param id
+     * @return
+     */
     Boolean delete(Long id);
+
+    /**
+     * 查询科目列表
+     * @return
+     */
     List<LmsSubject> queryList();
 }

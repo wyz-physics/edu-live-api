@@ -1,3 +1,4 @@
+
 package com.macro.mall.tiny.modules.ums.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;

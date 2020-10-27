@@ -20,35 +20,20 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-@TableName("cms_category")
-@ApiModel(value="CmsCategory对象", description="")
-public class CmsCategory implements Serializable {
+@TableName("cms_common_problems")
+@ApiModel(value="CmsCommonProblems对象", description="")
+public class CmsCommonProblems implements Serializable {
 
     private static final long serialVersionUID=1L;
 
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
-    @ApiModelProperty(value = "上级类目id")
-    private Long pid;
+    @ApiModelProperty(value = "标题")
+    private String title;
 
-    @ApiModelProperty(value = "类目名称")
-    private String name;
-
-    @ApiModelProperty(value = "几级分类")
-    private Integer level;
-
-    @ApiModelProperty(value = "类目图标")
-    private String iconUrl;
-
-    @ApiModelProperty(value = "类目图片")
-    private String picUrl;
-
-    @ApiModelProperty(value = "关键字")
-    private String keyword;
-
-    @ApiModelProperty(value = "类目简介")
-    private String briefIntroduction;
+    @ApiModelProperty(value = "内容")
+    private String content;
 
     @ApiModelProperty(value = "创建时间")
     private Date createTime;

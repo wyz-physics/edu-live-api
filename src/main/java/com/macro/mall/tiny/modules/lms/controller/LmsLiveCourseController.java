@@ -45,7 +45,9 @@ public class LmsLiveCourseController {
         Boolean aBoolean = liveCourseService.create(lmsLiveCourse);
         if (aBoolean) {
             return CommonResult.success(lmsLiveCourse, "新增成功");
-        } else return CommonResult.failed("新增失败");
+        } else {
+            return CommonResult.failed("新增失败");
+        }
     }
 
     @ApiOperation(value = "编辑直播课")
@@ -54,7 +56,9 @@ public class LmsLiveCourseController {
         Boolean aBoolean = liveCourseService.update(lmsLiveCourse);
         if (aBoolean) {
             return CommonResult.success(lmsLiveCourse, "修改成功");
-        } else return CommonResult.failed("修改失败");
+        } else {
+            return CommonResult.failed("修改失败");
+        }
     }
 
     @ApiOperation(value = "删除直播课")
@@ -63,7 +67,9 @@ public class LmsLiveCourseController {
         Boolean aBoolean = liveCourseService.delete(id);
         if (aBoolean) {
             return CommonResult.success(null, "删除成功");
-        } else return CommonResult.failed("删除失败");
+        } else {
+            return CommonResult.failed("删除失败");
+        }
 
     }
 
@@ -73,7 +79,9 @@ public class LmsLiveCourseController {
         Boolean aBoolean = liveCourseService.deleteMulti(ids);
         if (aBoolean) {
             return CommonResult.success(null, "删除成功");
-        } else return CommonResult.failed("删除失败");
+        } else {
+            return CommonResult.failed("删除失败");
+        }
     }
 }
 

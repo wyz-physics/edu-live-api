@@ -15,8 +15,31 @@ import java.util.List;
  */
 public interface LmsRecordCourseDetailService extends IService<LmsRecordCourseDetail> {
 
+    /**
+     *新增录播课程详情
+     * @param recordCourseDetail
+     * @return
+     */
     Boolean create(LmsRecordCourseDetail recordCourseDetail);
+
+    /**
+     * 修改录播课详情
+     * @param recordCourseDetail
+     * @return
+     */
     Boolean update(LmsRecordCourseDetail recordCourseDetail);
+
+    /**
+     * 删除录播课详情
+     * @param id
+     * @return
+     */
     Boolean delete(Long id);
+
+    /**
+     * 根据录播课id查询录播课详情
+     * @param recordCourseId
+     * @return
+     */
     List<LmsRecordCourseDetail> queryByRecordCourseId(Long recordCourseId);
 }

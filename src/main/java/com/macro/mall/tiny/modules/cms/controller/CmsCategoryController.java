@@ -26,9 +26,15 @@ public class CmsCategoryController {
     private CmsCategoryService categoryService;
 
     @ApiOperation("查询类目列表")
-    @PostMapping("/list")
+    @GetMapping("/list")
     public CommonResult<List<CmsCategory>> queryList() {
         return CommonResult.success(categoryService.queryList());
+    }
+
+    @ApiOperation("获取类目详情")
+    @GetMapping("/findById")
+    public CommonResult<CmsCategory> findById(@RequestParam Long id) {
+        return CommonResult.success(categoryService.findById(id));
     }
 
     @ApiOperation("新建类目")
@@ -37,7 +43,9 @@ public class CmsCategoryController {
         Boolean aBoolean = categoryService.create(category);
         if (aBoolean) {
             return CommonResult.success(category, "新增成功");
-        } else return CommonResult.failed("新增失败");
+        } else {
+            return CommonResult.failed("新增失败");
+        }
     }
 
     @ApiOperation("编辑类目")
@@ -46,7 +54,9 @@ public class CmsCategoryController {
         Boolean aBoolean = categoryService.update(category);
         if (aBoolean) {
             return CommonResult.success(category, "修改成功");
-        } else return CommonResult.failed("修改失败");
+        } else {
+            return CommonResult.failed("修改失败");
+        }
     }
 
     @ApiOperation("删除类目")
@@ -55,7 +65,9 @@ public class CmsCategoryController {
         Boolean aBoolean = categoryService.delete(id);
         if (aBoolean) {
             return CommonResult.success(null, "删除成功");
-        } else return CommonResult.failed("删除败");
+        } else {
+            return CommonResult.failed("删除败");
+        }
     }
 
 

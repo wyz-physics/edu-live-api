@@ -28,11 +28,7 @@ public class LmsRecordCourseDetailServiceImpl extends ServiceImpl<LmsRecordCours
     @Resource
     private LmsRecordCourseDetailService recordCourseDetailService;
 
-    /**
-     *新增录播课程详情
-     * @param recordCourseDetail
-     * @return
-     */
+    @Override
     public Boolean create(LmsRecordCourseDetail recordCourseDetail){
         recordCourseDetail.setCreateTime(new Date(System.currentTimeMillis()));
         recordCourseDetail.setUpdateTime(new Date(System.currentTimeMillis()));
@@ -42,11 +38,7 @@ public class LmsRecordCourseDetailServiceImpl extends ServiceImpl<LmsRecordCours
         return recordCourseDetailService.save(recordCourseDetail);
     }
 
-    /**
-     * 修改录播课详情
-     * @param recordCourseDetail
-     * @return
-     */
+    @Override
     public Boolean update(LmsRecordCourseDetail recordCourseDetail){
         if (recordCourseDetail.getId() == null){
             throw new ApiException("未找到该条数据");
@@ -54,20 +46,12 @@ public class LmsRecordCourseDetailServiceImpl extends ServiceImpl<LmsRecordCours
         return recordCourseDetailService.updateById(recordCourseDetail);
     }
 
-    /**
-     * 删除录播课详情
-     * @param id
-     * @return
-     */
+    @Override
     public Boolean delete(Long id){
         return recordCourseDetailService.removeById(id);
     }
 
-    /**
-     * 根据录播课id查询录播课详情
-     * @param recordCourseId
-     * @return
-     */
+    @Override
     public List<LmsRecordCourseDetail> queryByRecordCourseId(Long recordCourseId){
         QueryWrapper<LmsRecordCourseDetail> wrapper = new QueryWrapper<>();
         wrapper.lambda().eq(LmsRecordCourseDetail::getRecordCourseId,recordCourseId);

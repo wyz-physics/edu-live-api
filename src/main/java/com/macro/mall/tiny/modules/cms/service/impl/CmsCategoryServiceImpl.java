@@ -26,11 +26,7 @@ public class CmsCategoryServiceImpl extends ServiceImpl<CmsCategoryMapper, CmsCa
     @Resource
     private CmsCategoryService categoryService;
 
-    /**
-     * 新建类目
-     * @param category
-     * @return
-     */
+    @Override
     public Boolean create(CmsCategory category){
         updateLevel(category);
         category.setCreateTime(new Date(System.currentTimeMillis()));
@@ -38,10 +34,6 @@ public class CmsCategoryServiceImpl extends ServiceImpl<CmsCategoryMapper, CmsCa
         return save(category);
     }
 
-    /**
-     * 类目级别
-     * @param category
-     */
     public void updateLevel(CmsCategory category){
         Long pid = category.getPid();
         int level = 1;
@@ -52,11 +44,7 @@ public class CmsCategoryServiceImpl extends ServiceImpl<CmsCategoryMapper, CmsCa
         category.setLevel(level);
     }
 
-    /**
-     * 编辑类目
-     * @param category
-     * @return
-     */
+    @Override
     public Boolean update(CmsCategory category){
         category.setUpdateTime(new Date(System.currentTimeMillis()));
         if (category.getId() == null){
@@ -66,23 +54,21 @@ public class CmsCategoryServiceImpl extends ServiceImpl<CmsCategoryMapper, CmsCa
         return updateById(category);
     }
 
-    /**
-     * 删除类目及其子类目
-     * @param id
-     * @return
-     */
+    @Override
     public Boolean delete(Long id){
         QueryWrapper<CmsCategory> wrapper = new QueryWrapper<>();
         wrapper.lambda().eq(CmsCategory::getId,id).or().eq(CmsCategory::getId,id);
         return categoryService.remove(wrapper);
     }
 
-    /**
-     * 查询类目列表
-     * @return
-     */
+    @Override
     public List<CmsCategory> queryList(){
-        return list();
+        return categoryService.list();
+    }
+
+    @Override
+    public CmsCategory findById(Long id){
+        return categoryService.getById(id);
     }
 
 

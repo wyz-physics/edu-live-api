@@ -26,11 +26,7 @@ public class LmsLiveCourseDetailServiceImpl extends ServiceImpl<LmsLiveCourseDet
     @Resource
     private LmsLiveCourseDetailService liveCourseDetailService;
 
-    /**
-     *新增直播课程详情
-     * @param liveCourseDetail
-     * @return
-     */
+    @Override
     public Boolean create(LmsLiveCourseDetail liveCourseDetail){
         liveCourseDetail.setCreateTime(new Date(System.currentTimeMillis()));
         liveCourseDetail.setUpdateTime(new Date(System.currentTimeMillis()));
@@ -40,11 +36,7 @@ public class LmsLiveCourseDetailServiceImpl extends ServiceImpl<LmsLiveCourseDet
         return liveCourseDetailService.save(liveCourseDetail);
     }
 
-    /**
-     * 修改直播课详情
-     * @param liveCourseDetail
-     * @return
-     */
+    @Override
     public Boolean update(LmsLiveCourseDetail liveCourseDetail){
         if (liveCourseDetail.getId() == null){
             throw new ApiException("未找到该条数据");
@@ -52,20 +44,12 @@ public class LmsLiveCourseDetailServiceImpl extends ServiceImpl<LmsLiveCourseDet
         return liveCourseDetailService.updateById(liveCourseDetail);
     }
 
-    /**
-     * 删除直播课详情
-     * @param id
-     * @return
-     */
+    @Override
     public Boolean delete(Long id){
         return liveCourseDetailService.removeById(id);
     }
 
-    /**
-     * 根据直播课id查询直播课详情
-     * @param liveCourseId
-     * @return
-     */
+    @Override
     public List<LmsLiveCourseDetail> queryByLiveCourseId(Long liveCourseId){
         QueryWrapper<LmsLiveCourseDetail> wrapper = new QueryWrapper<>();
         wrapper.lambda().eq(LmsLiveCourseDetail::getLiveCourseId,liveCourseId);

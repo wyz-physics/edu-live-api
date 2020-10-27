@@ -25,22 +25,14 @@ public class LmsGradeServiceImpl extends ServiceImpl<LmsGradeMapper, LmsGrade> i
     @Resource
     private LmsGradeService gradeService;
 
-    /**
-     * 新增年级
-     * @param grade
-     * @return
-     */
+    @Override
     public Boolean create(LmsGrade grade){
         grade.setCreateTime(new Date(System.currentTimeMillis()));
         grade.setUpdateTime(new Date(System.currentTimeMillis()));
         return gradeService.save(grade);
     }
 
-    /**
-     * 编辑年级
-     * @param grade
-     * @return
-     */
+    @Override
     public Boolean update(LmsGrade grade){
         if (grade.getId() == null){
             throw new ApiException("主键id不能为空");
@@ -49,19 +41,12 @@ public class LmsGradeServiceImpl extends ServiceImpl<LmsGradeMapper, LmsGrade> i
         return gradeService.updateById(grade);
     }
 
-    /**
-     * 删除年级
-     * @param id
-     * @return
-     */
+    @Override
     public Boolean delete(Long id){
         return gradeService.removeById(id);
     }
 
-    /**
-     * 查询年级列表
-     * @return
-     */
+    @Override
     public List<LmsGrade> queryList(){
         return gradeService.list();
     }
