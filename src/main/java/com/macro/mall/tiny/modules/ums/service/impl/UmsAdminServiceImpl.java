@@ -192,6 +192,18 @@ public class UmsAdminServiceImpl extends ServiceImpl<UmsAdminMapper,UmsAdmin> im
     }
 
     @Override
+    public UmsAdmin queryByOId(String openId){
+        UmsAdmin admin = null;
+        QueryWrapper<UmsAdmin> wrapper = new QueryWrapper<>();
+        wrapper.lambda().eq(UmsAdmin::getWeixinOpenid,openId);
+        List<UmsAdmin> adminList = list(wrapper);
+        if (adminList != null && adminList.size() > 0) {
+            admin = adminList.get(0);
+        }
+        return admin;
+    }
+
+    @Override
     public int updateRole(Long adminId, List<Long> roleIds) {
         int count = roleIds == null ? 0 : roleIds.size();
         //先删除原来的关系

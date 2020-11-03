@@ -19,4 +19,18 @@ public interface CmsCommentService extends IService<CmsComment> {
      * @return
      */
     Boolean create(CmsComment comment);
+
+    /**
+     * 修改评论
+     * @param comment
+     * @return
+     */
+    Boolean update(CmsComment comment);
+
+    /**
+     * 删除评论
+     * @param id
+     * @return
+     */
+    Boolean delete(Long id);
 }

@@ -66,7 +66,7 @@ public class CmsCategoryController {
         if (aBoolean) {
             return CommonResult.success(null, "删除成功");
         } else {
-            return CommonResult.failed("删除败");
+            return CommonResult.failed("删除失败");
         }
     }
 

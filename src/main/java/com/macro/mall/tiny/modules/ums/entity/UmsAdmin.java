@@ -16,7 +16,7 @@ import lombok.EqualsAndHashCode;
  * </p>
  *
  * @author piao
- * @since 2020-10-15
+ * @since 2020-11-02
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -29,12 +29,17 @@ public class UmsAdmin implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
+    @ApiModelProperty(value = "登录用户名")
     private String username;
 
+    @ApiModelProperty(value = "登录密码")
     private String password;
 
     @ApiModelProperty(value = "头像")
     private String icon;
+
+    @ApiModelProperty(value = "性别")
+    private Integer gender;
 
     @ApiModelProperty(value = "邮箱")
     private String email;
@@ -45,14 +50,26 @@ public class UmsAdmin implements Serializable {
     @ApiModelProperty(value = "备注信息")
     private String note;
 
-    @ApiModelProperty(value = "创建时间")
-    private Date createTime;
-
     @ApiModelProperty(value = "最后登录时间")
     private Date loginTime;
 
     @ApiModelProperty(value = "帐号启用状态：0->禁用；1->启用")
     private Integer status;
+
+    @ApiModelProperty(value = "微信登录openid")
+    private String weixinOpenid;
+
+    @ApiModelProperty(value = "微信登录unionid")
+    private String weixinUnionid;
+
+    @ApiModelProperty(value = "上级id")
+    private Long pid;
+
+    @ApiModelProperty(value = "微信登录会话KEY")
+    private String sessionKey;
+
+    @ApiModelProperty(value = "创建时间")
+    private Date createTime;
 
 
 }
