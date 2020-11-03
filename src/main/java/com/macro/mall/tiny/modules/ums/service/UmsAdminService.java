@@ -47,13 +47,6 @@ public interface UmsAdminService extends IService<UmsAdmin> {
     Page<UmsAdmin> list(String keyword, Integer pageSize, Integer pageNum);
 
     /**
-     * 通过wxOpenId 查询用户
-     * @param openId
-     * @return
-     */
-    UmsAdmin queryByOId(String openId);
-
-    /**
      * 修改指定用户信息
      */
     boolean update(Long id, UmsAdmin admin);

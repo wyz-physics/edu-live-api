@@ -3,7 +3,6 @@ package com.macro.mall.tiny.security.util;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.extension.exceptions.ApiException;
-import com.macro.mall.tiny.domain.AdminUserDetails;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -48,11 +47,10 @@ public class SecurityUtils {
      * @return 系统用户ID
      */
     public static Long  getCurrentUserId() {
-        AdminUserDetails userDetails = (AdminUserDetails) getCurrentUser();
-        return userDetails.getUmsAdmin().getId();
-//        JSONObject jsonObject = (JSONObject)(JSONObject.toJSON(userDetails));
-//        JSONObject umsAdmin = jsonObject.getJSONObject("umsAdmin");
-//        return umsAdmin.getLong("id");
+        UserDetails userDetails = getCurrentUser();
+        JSONObject jsonObject = JSONObject.parseObject(JSONObject.toJSON(userDetails).toString());
+        JSONObject umsAdmin = jsonObject.getJSONObject("umsAdmin");
+        return umsAdmin.getLong("id");
 
     }
 

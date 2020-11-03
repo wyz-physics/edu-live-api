@@ -1,7 +1,5 @@
 package com.macro.mall.tiny.modules.cms.service.impl;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.macro.mall.tiny.modules.cms.entity.CmsComment;
 import com.macro.mall.tiny.modules.cms.mapper.CmsCommentMapper;
 import com.macro.mall.tiny.modules.cms.service.CmsCommentService;
@@ -33,21 +31,4 @@ public class CmsCommentServiceImpl extends ServiceImpl<CmsCommentMapper, CmsComm
         comment.setUserId(userId);
         return commentService.save(comment);
     }
-
-    @Override
-    public Boolean update(CmsComment comment){
-        comment.setUpdateTime(new Date(System.currentTimeMillis()));
-        return commentService.updateById(comment);
-    }
-
-    @Override
-    public Boolean delete(Long id){
-        return commentService.removeById(id);
-    }
-
-//    @Override
-//    public Page<CmsComment> queryList(){
-//        QueryWrapper<CmsComment> wrapper = new QueryWrapper<>();
-//        wrapper.lambda().eq()
-//    }
 }

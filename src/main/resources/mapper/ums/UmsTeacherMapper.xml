@@ -7,12 +7,6 @@
         <id column="id" property="id" />
         <result column="user_id" property="userId" />
         <result column="name" property="name" />
-        <result column="teacher_qualification" property="teacherQualification" />
-        <result column="teaching_experience" property="teachingExperience" />
-        <result column="fruit_of_teaching" property="fruitOfTeaching" />
-        <result column="teaching_characteristics" property="teachingCharacteristics" />
-        <result column="create_time" property="createTime" />
-        <result column="update_time" property="updateTime" />
     </resultMap>
 
 </mapper>
